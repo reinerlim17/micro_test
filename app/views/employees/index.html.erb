@@ -13,19 +13,15 @@
           <th class="span2">Complete Name</th>
           <th class="span2">Contact Number</th>
           <th class="span2">Address</th>
-
-          
         </tr>
       </thead>
-      <%= render 'layouts/flash_report' %>
       <tbody>
         <% @employees.each do |employee| %>
         <tr>
-            <td><%= link_to employee.name, employee_path(employee) %></td>
-            <td><%= employee.contact_number %></td>
-            <td><%= employee.address %></td>
-           
-            
+      <td><%= link_to employee.name, employee_path(employee) %></td>
+      <td><%= employee.contact_number %></td>
+       <td><%= employee.address %></td>
+
         </tr>
         <% end %>
       </tbody>
