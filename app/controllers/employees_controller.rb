@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
 		@employees = Employee.order("id DESC").all 
 	end
 	def new
-		@employee = Employee.new(params[:employee])
+		@employee = Employee.new
 	end
 
 	def create
@@ -13,7 +13,7 @@ class EmployeesController < ApplicationController
 			redirect_to employees_path
 		else
 			#flash[:alert] = "Inquiry has not been saved."
-			render 'new'
+			render :action => 'new'
 		end
 	end
 
@@ -27,13 +27,14 @@ class EmployeesController < ApplicationController
 
 	def update
 		@employee = Employee.find(params[:id])
-		if @employee.update_attributes(params[:employee])
+		@employee.update_attributes(params[:employee])
 		#flash[:notice] = "Inquiry has been Update."
-			redirect_to @employee
-		else
-			#flash[:alert] = "Failed"
-			render 'new'
-		end
+		@employee.save
+		redirect_to @employee
 	end
+	def destroy
+		@employee = Employee.find(params[:id])
+		@employee.destroy
+		redirect_to employee_path
 end
-
+end

@@ -3,5 +3,6 @@ MicroTest::Application.routes.draw do
  resources :employees
 
  root :to => 'pages#home'
+	match '/employee', :to => 'pages#employee'
 
 end
