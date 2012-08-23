@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="span10">
+		    <ul class="breadcrumb">
+              <li>
+                <%= link_to "All Employee Information", employees_path %><span class="divider">/</span>
+              </li>
+                <%= link_to "Updated", edit_employee_path(@employee), :class => "pull-right label label-info" %>
+        	</ul>
+        	
+<table class="table table-condensed">
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<th class="span3">Complete Name:</th>
+				<td><%= @employee.name %></td>
+			</tr>
+			<tr>
+				<th class="span3">Address:</th>
+				<td><%= @employee.address %></td>
+			</tr>
+			<tr>
+				<th class="span3">Contact Number :</th>
+				<td><%= @employee.contact_number  %></td>
+			</tr>
+			<tr>
+				<th class="span3">Birthday: </th>
+				<td><%= @employee.birthday %></td>
+			</tr>
+			<tr>
+				<th class="span3">Age: </th>
+				<td><%= @employee.age %></td>
+			</tr>
+			<tr>
+				<th class="span3">Email:</th>
+				<td><%= @employee.email %></th>
+				</tr>
+	
+	</table>
