@@ -8,8 +8,10 @@
               <%= link_to "New Employee", new_employee_path, :class => "pull-right label label-info" %>
         </ul>
     <table class="table table-condensed">
+ 
       <thead>
         <tr class="well">
+          <th class="span2">ID</th>
           <th class="span2">Complete Name</th>
           <th class="span2">Contact Number</th>
           <th class="span2">Address</th>
@@ -18,10 +20,11 @@
       <tbody>
         <% @employees.each do |employee| %>
         <tr>
-      <td><%= link_to employee.name, employee_path(employee) %></td>
+      <td><%= link_to employee.id, employee_path(employee) %></td>
+      <td><%= employee.name %></td>
       <td><%= employee.contact_number %></td>
        <td><%= employee.address %></td>
-
+     <td><%= link_to '', employee, :confirm => 'Are you sure?', :method => :delete, :class => 'icon-trash' %></td>
         </tr>
         <% end %>
       </tbody>

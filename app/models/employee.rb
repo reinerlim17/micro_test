@@ -7,6 +7,14 @@ class EmailValidator < ActiveModel::EachValidator
 end
 class Employee < ActiveRecord::Base
   attr_accessible :address, :age, :birthday, :contact_number, :email, :name
-
-	
+	validates :name, presence:true,length: { maximum: 60 }
+	validates :address,presence:true, length: { maximum: 60 }
+	validates :age, presence:true, length: { maximum: 2 }
+	validates :email, presence:true,length: { maximum: 60 }
+	validates :contact_number, presence:true,  length:{ maximum:12 }
+def employee
+	employee = self.ID
+	"ID-" + self.id.to_s
+		
+	end
 end

@@ -1,37 +1,40 @@
 <%= form_for @employee, :html => { :class => "form-horizontal well"} do |f| %>
+
 <table class="table table-condensed">
-	<thead class="well">
+
+<tbody>
 		<tr>
 			<th class="span3">Personal Information</th>
 			<td></td>
 		</tr>
 	<tr>
 		<th class="span3">Complete Name:</th>
-		<td><%= f.text_field :name, :class => "span8" %></td>
+		<td><%= f.text_field :name, :class => "span5" %></td>
 	</tr>
 	<tr>
 		<th class="span3">Address:</th>
-		<td><%= f.text_field :address, :class => "span8" %></td>
+		<td><%= f.text_field :address, :class => "span5" %></td>
 	</tr>
 	<tr>
 		<th class="span3">Contact Number:</th>
-		<td><%= f.text_field :contact_number, :class => "span8" %></td>
+		<td><%= f.text_field :contact_number, :class => "span5" %></td>
 	</tr>
 	<tr>
 		<th class="span3">Birthday:</th>
-		<td><%= f.text_field :birthday, :class => "span8" %></td>
+		<td><%= f.text_field :birthday, :class => "span5" %></td>
 	</tr>
 	<tr>
 		<th class="span3">Age:</th>
-		<td><%= f.text_field :age, :class => "span8" %></td>
+		<td><%= f.text_field :age, :class => "span5" %></td>
 	</tr>
 	<tr>
 		<th class="span3">Email:</th>
-		<td><%= f.text_field :email, :class => "span8" %></td>
+		<td><%= f.text_field :email, :class => "span5" %></td>
 	</tr>
 		
-		</thead>
+		</tbody>
 		</table>
+
 	<center><%= f.submit :class => "btn btn-primary" %></center>
 <% end %>
 	</div>

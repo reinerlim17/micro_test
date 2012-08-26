@@ -15,3 +15,4 @@
 //= require_tree .
 $('.dropdown-toggle').dropdown()
 $('.typeahead').typeahead()
+$('#myModal').modal()

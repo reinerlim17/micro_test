@@ -3,17 +3,17 @@ class EmployeesController < ApplicationController
 		@employees = Employee.order("id DESC").all 
 	end
 	def new
-		@employee = Employee.new
+		@employee = Employee.new(params[:employee])
 	end
 
 	def create
 		@employee = Employee.new(params[:employee])
 		if @employee.save
-			#flash[:notice] = "Inquiry has been saved."
+			flash[:sucees] = "employee has been saved."
 			redirect_to employees_path
 		else
-			#flash[:alert] = "Inquiry has not been saved."
-			render :action => 'new'
+			flash[:alert] = "Inquiry has not been saved."
+			render 'new'
 		end
 	end
 
@@ -27,14 +27,16 @@ class EmployeesController < ApplicationController
 
 	def update
 		@employee = Employee.find(params[:id])
-		@employee.update_attributes(params[:employee])
-		#flash[:notice] = "Inquiry has been Update."
-		@employee.save
+		if @employee.update_attributes(params[:employee])
+		flash[:success] = "employee has been Update."
 		redirect_to @employee
+	else
+		render 'new'
 	end
+end
 	def destroy
 		@employee = Employee.find(params[:id])
 		@employee.destroy
 		redirect_to employee_path
-end
+	end
 end
