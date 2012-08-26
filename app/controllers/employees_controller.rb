@@ -21,7 +21,7 @@ class EmployeesController < ApplicationController
 		@employee = Employee.find(params[:id])
 	end
 
-	def edit
+	def show
 		@employee = Employee.find(params[:id])
 	end
 
@@ -37,6 +37,6 @@ end
 	def destroy
 		@employee = Employee.find(params[:id])
 		@employee.destroy
-		redirect_to employee_path
+		redirect_to employees_path
 	end
 end

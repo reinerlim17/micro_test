@@ -12,8 +12,8 @@ class Employee < ActiveRecord::Base
 	validates :age, presence:true, length: { maximum: 2 }
 	validates :email, presence:true,length: { maximum: 60 }
 	validates :contact_number, presence:true,  length:{ maximum:12 }
-def employee
-	employee = self.ID
+def employee_id
+	employee_id = self.ID
 	"ID-" + self.id.to_s
 		
 	end
