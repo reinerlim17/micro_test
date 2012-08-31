@@ -16,6 +16,7 @@
 		</thead>
 
 		<tbody>
+			<%= image_tag @employee.photo.url(:small) %>
 			<tr>
 				<th class="span3">Complete Name:</th>
 				<td><%= @employee.name %></td>

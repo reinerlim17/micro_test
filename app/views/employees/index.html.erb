@@ -15,6 +15,7 @@
           <th class="span2">Complete Name</th>
           <th class="span2">Contact Number</th>
           <th class="span2">Address</th>
+          
         </tr>
       </thead>
       <tbody>
@@ -24,6 +25,7 @@
       <td><%= employee.name %></td>
       <td><%= employee.contact_number %></td>
        <td><%= employee.address %></td>
+
      <td><%= link_to '', employee, :confirm => 'Are you sure?', :method => :delete, :class => 'icon-trash' %></td>
         </tr>
         <% end %>
